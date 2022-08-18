@@ -22,6 +22,8 @@ function App() {
         {id: 30, manufacturer: 'Audi', model: 'rs6'}
     ]
 
+
+
     const [money, setMoney] = useState<Array<MoneyArrayType>>([
         { banknots: 'dollar', value: 100, number: 'a1234567890' },
         { banknots: 'dollar', value: 50, number: 'z1234567890' },
@@ -52,7 +54,7 @@ function App() {
             <div style={{fontWeight: "bold", margin: "30px"}}>Hello, samurai!</div>
             <Cars carslist={topCars}/>
             <Counter />
-            <Bank money={filteredMoney} clicker={onClickFilterHandler}/>
+            <Bank moneyprops={filteredMoney} clicker={onClickFilterHandler}/>
         </div>
     );
 }

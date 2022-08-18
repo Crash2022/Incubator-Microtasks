@@ -2,11 +2,11 @@ import React from 'react';
 import {useState} from 'react';
 
 type MoneyPropsType = {
-    filteredMoney: Array<MoneyType>
-    clicker:()=>void
+    moneyprops: Array<MoneyArrayType>,
+    clicker:any
 }
 
-type MoneyType = {
+type MoneyArrayType = {
     banknots: string,
     value: number,
     number: string
@@ -22,7 +22,7 @@ export const Bank = (props: MoneyPropsType) => {
 
         <div className="bank">
             <ul>
-                {filteredMoney.map((elem, index)=>{
+                {props.moneyprops.map((elem, index)=>{
                     return (
                         <li key={index}>
                             <span style={{paddingRight:"20px"}}>{elem.banknots}</span><span>{elem.value}</span><span style={{paddingLeft:"20px"}}>{elem.number}</span>
