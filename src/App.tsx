@@ -12,7 +12,7 @@ import {Button} from './components/Button/Button';
     number: string
 } */
 
-type FilterType = 'all' | 'dollar' | 'ruble'
+export type FilterType = 'all' | 'dollar' | 'ruble'
 
 /* type CarsType = {
     id: number,
@@ -54,10 +54,16 @@ function App() {
         setFilter(nameButton);
     }
 
+    const title= 'Stupid Button';
+    const handler = () => {
+        console.log('I do nothing!');
+    }
+
     return (
         <div className="App">
             <div style={{fontWeight: "bold", margin: "30px"}}>Hello, samurai!</div>
             <Cars carslist={topCars}/>
+            <Button name={title} callBack={handler}/>
             <Counter />
             <Bank moneyprops={filteredMoney} clicker={onClickFilterHandler}/>
         </div>

@@ -1,9 +1,10 @@
 import React from 'react';
 import {useState} from 'react';
+import {FilterType} from './../../App'
 
 type MoneyPropsType = {
     moneyprops: Array<MoneyArrayType>,
-    clicker: any
+    clicker: (nameButton: FilterType)=>void
 }
 
 type MoneyArrayType = {
