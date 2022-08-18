@@ -3,7 +3,7 @@ import {useState} from 'react';
 
 type MoneyPropsType = {
     moneyprops: Array<MoneyArrayType>,
-    clicker:any
+    clicker: any
 }
 
 type MoneyArrayType = {

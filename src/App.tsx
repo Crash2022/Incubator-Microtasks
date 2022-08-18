@@ -6,13 +6,19 @@ import {Counter} from './components/Counter/Counter';
 import {Bank} from './components/Bank/Bank';
 import {Button} from './components/Button/Button';
 
-type MoneyArrayType = {
+/* type MoneyArrayType = {
     banknots: string,
     value: number,
     number: string
-}
+} */
 
 type FilterType = 'all' | 'dollar' | 'ruble'
+
+/* type CarsType = {
+    id: number,
+    manufacturer: string,
+    model: string
+} */
 
 function App() {
 
@@ -23,8 +29,7 @@ function App() {
     ]
 
 
-
-    const [money, setMoney] = useState<Array<MoneyArrayType>>([
+    const [money, setMoney] = useState/* <Array<MoneyArrayType>> */([
         { banknots: 'dollar', value: 100, number: 'a1234567890' },
         { banknots: 'dollar', value: 50, number: 'z1234567890' },
         { banknots: 'ruble', value: 100, number: 'w1234567890' },
