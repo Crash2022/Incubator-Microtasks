@@ -13,8 +13,8 @@ export const Button = (props: ButtonPropsType) => {
 
     return (
         <>
-            <div>
-                <button style={{marginBottom: "30px"}} onClick={onClickHandler}>{props.name}</button>
+            <div className="stupidbutton">
+                <button onClick={onClickHandler}>{props.name}</button>
             </div>
         </>
     );

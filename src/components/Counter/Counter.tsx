@@ -13,9 +13,9 @@ export const Counter = () => {
     }
         
     return (
-        <div style={{marginBottom: "50px"}}>
+        <div className="counter">
             {counter}
-            <button onClick={onClickHandler}>counter</button>
+            <button onClick={onClickHandler}>counter+</button>
             <button onClick={clearCounter}>clear</button>
         </div>
     );

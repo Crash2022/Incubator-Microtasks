@@ -1,10 +1,3 @@
-.App {
-  text-align: center;
-  width: 1200px;
-  /* margin: 0 auto; */
-  min-height: 100vh;
-}
-
 /*.App-logo {*/
 /*  height: 40vmin;*/
 /*  pointer-events: none;*/
@@ -75,18 +68,63 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 
 /*---------------------------------*/
 
+.App {
+  text-align: center;
+  /* margin: 0 auto; */
+  border: 1px solid black;
+}
+
+.wrapper {
+  max-width: 1200px;
+  /*height: 100vh;*/
+  margin: 0 auto;
+  border: 1px solid black;
+}
+
+.cars {
+
+}
 table {
   border-collapse: collapse;
   border: 1px solid black;
   margin: 0 auto;
 }
-
 table td {
   border: 1px solid black;
   display: table-cell;
   padding: 10px;
 }
 
+.stupidbutton {
+  margin-bottom: 10px;
+}
+
+.counter {
+  margin-bottom: 20px;
+}
+
 .bank {
+  border: 1px solid black;
+}
+.bankbuttons {
+
+}
+.banklist {
+  margin: 0 auto;
+}
+.bank ul {
+  border: 1px solid black;
+  /*display: inline-block;*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   
+}
+.bank li {
+  list-style: circle;
+  /*text-align: left;*/
+}
+
+button {
+  margin: 5px;
 }

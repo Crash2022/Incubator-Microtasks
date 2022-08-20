@@ -4,7 +4,7 @@ import {FilterType} from './../../App'
 
 type MoneyPropsType = {
     moneyprops: Array<MoneyArrayType>,
-    clicker: (nameButton: FilterType)=>void
+    clicker: (nameButton: FilterType) => void
 }
 
 type MoneyArrayType = {
@@ -17,21 +17,35 @@ export const Bank = (props: MoneyPropsType) => {
 
     return (
         <>
-        <button onClick={()=>{props.clicker('all')}}>all</button>
-        <button onClick={()=>{props.clicker('ruble')}}>rubles</button>
-        <button onClick={()=>{props.clicker('dollar')}}>dollars</button>
+            <div className="bank">
+                <div className="bankbuttons">
+                    <button onClick={() => {
+                        props.clicker('all')
+                    }}>all
+                    </button>
+                    <button onClick={() => {
+                        props.clicker('ruble')
+                    }}>rubles
+                    </button>
+                    <button onClick={() => {
+                        props.clicker('dollar')
+                    }}>dollars
+                    </button>
+                </div>
 
-        <div className="bank">
-            <ul>
-                {props.moneyprops.map((elem, index)=>{
-                    return (
-                        <li key={index}>
-                            <span style={{paddingRight:"20px"}}>{elem.banknots}</span><span>{elem.value}</span><span style={{paddingLeft:"20px"}}>{elem.number}</span>
-                        </li>
-                    )
-                })}
-            </ul>
-        </div>
+                <div className="banklist">
+                    <ul>
+                        {props.moneyprops.map((elem, index) => {
+                            return (
+                                <li key={index}>
+                                    <span style={{paddingRight: "20px"}}>{elem.banknots}</span><span>{elem.value}</span><span
+                                    style={{paddingLeft: "20px"}}>{elem.number}</span>
+                                </li>
+                            )
+                        })}
+                    </ul>
+                </div>
+            </div>
         </>
     );
 }
