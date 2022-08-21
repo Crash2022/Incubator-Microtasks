@@ -113,15 +113,20 @@ table td {
 
 }
 .bank ul {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   display: inline-block;
+  
+  margin-left: 5px;
+  margin-right: 0px;
+  padding-left: 10px;
+  padding-right: 0px;
 
   /* display: flex;
   flex-direction: column;
   align-items: flex-start; */
 }
 .bank li {
-  list-style: circle;
+  list-style: inside;
   text-align: left;
 }
 
