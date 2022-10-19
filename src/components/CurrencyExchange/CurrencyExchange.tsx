@@ -1,15 +1,15 @@
 import React from 'react';
 
 type CurrencyExchangePropsType = {
-    currenciesName: string[];
-    currentCurrency: string;
-    currencyRate: number;
-    isBuying: boolean;
-    amountOfBYN: string;
-    amountOfCurrency: string;
-    changeCurrencyField: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    changeAction: (e: React.MouseEvent<HTMLSpanElement>) => void;
-    changeCurrentCurrency: (e: React.MouseEvent<HTMLLIElement>) => void;
+    currenciesName: Array<string>
+    currentCurrency: string
+    currencyRate: number
+    isBuying: boolean
+    amountOfBYN: string
+    amountOfCurrency: string
+    changeCurrencyField: (e: React.ChangeEvent<HTMLInputElement>) => void
+    changeAction: (e: React.MouseEvent<HTMLSpanElement>) => void
+    changeCurrentCurrency: (e: React.MouseEvent<HTMLLIElement>) => void
 };
 
 export const CurrencyExchange: React.FC<CurrencyExchangePropsType> = ({
