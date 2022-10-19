@@ -10,6 +10,8 @@ export const Lesson3 = () => {
 
     const searchFilm = () => {
         API.searchFilmsByTitle(searchName)
+            //.then(response => response.data)
+        //setSearchResult(response)
     };
 
     const searchByType = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -25,7 +27,7 @@ export const Lesson3 = () => {
                 <input type="text" value={searchName} onChange={(e) => setSearchName(e.currentTarget.value)}/>
                 <button onClick={searchFilm}>Search</button>
                 <div>
-                    {searchResult}
+                    Результат поиска: {searchResult}
                 </div>
             </div>
 
@@ -34,8 +36,8 @@ export const Lesson3 = () => {
                 <input type="text" value={searchNameByType} onChange={(e) => setSearchNameByType(e.currentTarget.value)}/>
                 <button onClick={searchByType} data-t='movie'>Movie</button>
                 <button onClick={searchByType} data-t='series'>Series</button>
-                <div>
-                    {searchResultByType}
+                <div style={{marginBottom: '50px'}}>
+                    Результат поиска: {searchResultByType}
                 </div>
             </div>
         </div>
