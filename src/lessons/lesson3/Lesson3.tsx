@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import API from './API';
+import {API} from './API';
 import './lesson_3';
 
-const Lesson3 = () => {
+export const Lesson3 = () => {
     const [searchName, setSearchName] = useState('');
-    const [serachResult, setSerachResult] = useState('');
+    const [searchResult, setSearchResult] = useState('');
     const [searchNameByType, setSearchNameByType] = useState('');
-    const [serachResultByType, setSerachResultByType] = useState('');
+    const [searchResultByType, setSearchResultByType] = useState('');
 
     const searchFilm = () => {
         API.searchFilmsByTitle(searchName)
@@ -25,7 +25,7 @@ const Lesson3 = () => {
                 <input type="text" value={searchName} onChange={(e) => setSearchName(e.currentTarget.value)}/>
                 <button onClick={searchFilm}>Search</button>
                 <div>
-                    {serachResult}
+                    {searchResult}
                 </div>
             </div>
 
@@ -35,10 +35,9 @@ const Lesson3 = () => {
                 <button onClick={searchByType} data-t='movie'>Movie</button>
                 <button onClick={searchByType} data-t='series'>Series</button>
                 <div>
-                    {serachResultByType}
+                    {searchResultByType}
                 </div>
             </div>
         </div>
     );
 }
-export default Lesson3;

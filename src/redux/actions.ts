@@ -4,26 +4,17 @@ export enum ACTIONS_TYPE {
     CHANGE_CURRENT_CURRENCY = 'CurrencyExchange/CHANGE_CURRENT_CURRENCY'
 }
 
-/*export type ChangeCurrencyFieldType = {
-};*/
-
 export type ChangeCurrencyFieldACType = ReturnType<typeof changeCurrencyFieldAC>
 export const changeCurrencyFieldAC = (amountOfBYN: string, amountOfCurrency: string)/*: ChangeCurrencyFieldType*/ => ({
     type: ACTIONS_TYPE.CHANGE_CURRENCY_FIELD_TYPE,
     amountOfBYN, amountOfCurrency
 } as const);
 
-/*export type ChangeAction = {
-};*/
-
 export type ChangeActionACType = ReturnType<typeof changeActionAC>
 export const changeActionAC = (isBuying: boolean)/*: ChangeAction*/ => ({
     type: ACTIONS_TYPE.CHANGE_CHANGE_ACTION,
     isBuying
 } as const);
-
-/*export type ChangeCurrentCurrencyType = {
-};*/
 
 export type ChangeCurrentCurrencyACType = ReturnType<typeof changeCurrentCurrencyAC>
 export const changeCurrentCurrencyAC = (currentCurrency: string)/*: ChangeCurrentCurrencyType*/ => ({
