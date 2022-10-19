@@ -1,5 +1,5 @@
 import React from 'react';
-import CurrencyExchange from '../../components/CurrencyExchange/CurrencyExchange';
+import {CurrencyExchange} from '../../components/CurrencyExchange/CurrencyExchange';
 import { CurrencyState, CurrencyType } from '../../redux/currencyReducer';
 import { Dispatch } from 'redux';
 import {CurrencyReducersTypes,
@@ -18,6 +18,8 @@ import { connect, ConnectedProps } from 'react-redux';
 //     setAction: any
 //     changeCurrency: any
 // }
+
+type TProps = ConnectedProps<typeof connector>;
 
 const CurrencyEContainer: React.FC<TProps> = props => {
 
@@ -113,6 +115,4 @@ const mapDispatchToProps = (dispatch: Dispatch<CurrencyReducersTypes>) : any => 
 // @ts-ignore
 const connector = connect(mapStateToProps, mapDispatchToProps);
 
-type TProps = ConnectedProps<typeof connector>;
-
-export default connector(CurrencyExchangeContainer);
+export default connector(CurrencyEContainer);

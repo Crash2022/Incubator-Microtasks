@@ -9,7 +9,7 @@ import {Lesson1} from './lessons/lesson1/lesson1';
 // import './lessons/lesson7/lesson7';
 // import './lessons/lesson8/lesson8';
 
-function App() {
+export const App = () => {
     return (
         <div className="container">
             <Lesson1 />
@@ -18,5 +18,3 @@ function App() {
         </div>
     );
 }
-
-export default App;
