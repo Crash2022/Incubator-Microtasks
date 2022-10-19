@@ -1,135 +1,67 @@
-/*.App-logo {*/
-/*  height: 40vmin;*/
-/*  pointer-events: none;*/
-/*}*/
-
-/*@media (prefers-reduced-motion: no-preference) {*/
-/*  .App-logo {*/
-/*    animation: App-logo-spin infinite 20s linear;*/
-/*  }*/
-/*}*/
-
-/*.App-header {*/
-/*  background-color: #282c34;*/
-/*  min-height: 100vh;*/
-/*  display: flex;*/
-/*  flex-direction: column;*/
-/*  align-items: center;*/
-/*  justify-content: center;*/
-/*  font-size: calc(10px + 2vmin);*/
-/*  color: white;*/
-/*}*/
-
-/*.App-link {*/
-/*  color: #61dafb;*/
-/*}*/
-
-/*@keyframes App-logo-spin {*/
-/*  from {*/
-/*    transform: rotate(0deg);*/
-/*  }*/
-/*  to {*/
-/*    transform: rotate(360deg);*/
-/*  }*/
-/*}*/
-
-/*Обнуление*/
-
-*,*:before,*:after{
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+.container {
+  width: 40vw;
+  margin: 0 auto;
+  margin-top: 50px;
 }
-:focus,:active{outline: none;}
-a:focus,a:active{outline: none;}
-
-nav,footer,header,aside{display: block;}
-
-html,body{
-  height: 100%;
-  width: 100%;
-  font-size: 100%;
-  line-height: 1;
-  font-size: 14px;
-  -ms-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
+.currency {
+  padding: 0 15px;
+  border: 2px solid cornflowerblue;
+  border-radius: 10px;
+  background-color: rgba(249, 247, 246, 0.9);
 }
-input,button,textarea{font-family:inherit;}
-
-input::-ms-clear{display: none;}
-button{cursor: pointer;}
-button::-moz-focus-inner {padding:0;border:0;}
-
-ul li{list-style: none;}
-img{vertical-align: top;}
-
-h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
-
-/*---------------------------------*/
-
-.App {
+.currency h2 {
   text-align: center;
-  /* margin: 0 auto; */
-  /* border: 1px solid black; */
+}
+.currency-names {
+  display: flex;
+}
+.currency-names p {
+  padding: 7px 0;
+}
+.currency ul {
+  list-style: none;
+  display: inline;
 }
 
-.wrapper {
-  max-width: 1200px;
-  /*height: 100vh;*/
-  margin: 0 auto;
-  /* border: 1px solid black; */
+.currency li {
+  display: inline-block;
+  margin-right: 10px;
+  cursor: pointer;
 }
 
-.cars {
+.currency-action {
+  display: flex;
+  justify-content: space-between;
+}
 
-}
-table {
-  border-collapse: collapse;
-  border: 1px solid black;
-  margin: 0 auto;
-}
-table td {
-  border: 1px solid black;
-  display: table-cell;
+.currency-action span {
+  width: 40%;
+  text-align: center;
   padding: 10px;
+  border: 2px solid cornflowerblue;
+  border-radius: 10px;
+  color: cornflowerblue;
+  cursor: pointer;
 }
-
-.stupidbutton {
-  margin-bottom: 10px;
+.currency-action span.active {
+  color: white;
+  background-color: cornflowerblue;
 }
-
-.counter {
+.currencies {
+  padding: 5px 10px;
+  border: 2px solid cornflowerblue;
+  color: cornflowerblue;
+}
+.activeCurrency {
+  background-color: cornflowerblue;
+  color: white;
+}
+.fields label {
+  display: block;
   margin-bottom: 20px;
 }
-
-.bank {
-  /* border: 1px solid black; */
-}
-.bankbuttons {
-
-}
-.banklist {
-
-}
-.bank ul {
-  /* border: 1px solid black; */
-  display: inline-block;
-  
-  margin-left: 5px;
-  margin-right: 0px;
-  padding-left: 10px;
-  padding-right: 0px;
-
-  /* display: flex;
-  flex-direction: column;
-  align-items: flex-start; */
-}
-.bank li {
-  list-style: inside;
-  text-align: left;
-}
-
-button {
-  margin: 5px;
+.fields label input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
 }

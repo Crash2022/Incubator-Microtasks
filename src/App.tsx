@@ -1,69 +1,21 @@
-import React, {useState} from 'react';
-/* import {useState} from 'react'; */
+import React from 'react';
 import './App.css';
-import {Cars} from './components/Cars/Cars';
-import {Counter} from './components/Counter/Counter';
-import {Bank} from './components/Bank/Bank';
-import {Button} from './components/Button/Button';
-
-export type MoneyArrayType = {
-    banknots: string,
-    value: number,
-    number: string
-}
-
-export type FilterType = 'all' | 'dollar' | 'ruble'
+import {Lesson1} from './lessons/lesson1/lesson1';
+// import './lessons/lesson2/lesson2';
+// import Lesson3 from './lessons/lesson3/Lesson3';
+// import Lesson4 from './lessons/lesson4/Lesson4';
+// import './lessons/lesson5/lesson5';
+// import './lessons/lesson6/lesson6';
+// import './lessons/lesson7/lesson7';
+// import './lessons/lesson8/lesson8';
 
 function App() {
-
-    const topCars = [
-        {id: 10, manufacturer: 'BMW', model: 'm5cs'},
-        {id: 20, manufacturer: 'Mercedes', model: 'e63s'},
-        {id: 30, manufacturer: 'Audi', model: 'rs6'}
-    ]
-
-    const [money, setMoney] = useState/* <Array<MoneyArrayType>> */([
-        {banknots: 'dollar', value: 100, number: 'a1234567890'},
-        {banknots: 'dollar', value: 50, number: 'z1234567890'},
-        {banknots: 'ruble', value: 100, number: 'w1234567890'},
-        {banknots: 'dollar', value: 100, number: 'e1234567890'},
-        {banknots: 'dollar', value: 50, number: 'c1234567890'},
-        {banknots: 'ruble', value: 100, number: 'r1234567890'},
-        {banknots: 'dollar', value: 50, number: 'x1234567890'},
-        {banknots: 'ruble', value: 50, number: 'v1234567890'}
-    ])
-
-    const [filter, setFilter] = useState<FilterType>('all');
-    let filteredMoney = money;
-
-    if (filter === 'dollar') {
-        filteredMoney = money.filter((element) => element.banknots === 'dollar');
-    }
-    if (filter === 'ruble') {
-        filteredMoney = money.filter((element) => element.banknots === 'ruble');
-    }
-
-    const onClickFilterHandler = (nameButton: FilterType) => {
-        setFilter(nameButton);
-    }
-
-    const title = 'Stupid Button';
-    const handler = () => {
-        console.log('I do nothing!');
-    }
-
     return (
-        <>
-            <div className="App">
-                <div className="wrapper">
-                    <div style={{fontWeight: "bold", margin: "30px"}}>Hello, samurai!</div>
-                    <Cars carslist={topCars}/>
-                    <Button name={title} callBack={handler}/>
-                    <Counter/>
-                    <Bank moneyprops={filteredMoney} clicker={onClickFilterHandler}/>
-                </div>
-            </div>
-        </>
+        <div className="container">
+            <Lesson1 />
+            {/*<Lesson3 />*/}
+            {/*<Lesson4 />*/}
+        </div>
     );
 }
 
