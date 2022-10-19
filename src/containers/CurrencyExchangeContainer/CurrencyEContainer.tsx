@@ -8,17 +8,6 @@ import {CurrencyReducersTypes,
     changeCurrentCurrencyAC} from '../../redux/actions';
 import { connect, ConnectedProps } from 'react-redux';
 
-// type TProps = {
-//     currencies: Array<CurrencyType>
-//     currentCurrency: string
-//     isBuying: boolean
-//     amountOfBYN: string
-//     amountOfCurrency: string
-//     setCurrencyAmount: any
-//     setAction: any
-//     changeCurrency: any
-// }
-
 type TProps = ConnectedProps<typeof connector>;
 
 type DispatchToPropsType = {
