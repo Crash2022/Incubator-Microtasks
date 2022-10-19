@@ -108,4 +108,4 @@ const mapDispatchToProps = (dispatch: Dispatch<CurrencyReducersTypes>): Dispatch
 
 const connector = connect(mapStateToProps, mapDispatchToProps);
 
-export default connector(CurrencyEContainer);
+export const CurrencyExchangeContainer = connector(CurrencyEContainer);
