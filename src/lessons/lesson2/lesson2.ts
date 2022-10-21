@@ -1,3 +1,5 @@
+// @ts-ignore
+
 console.log('lesson 2');
 
 // Lexical environment
