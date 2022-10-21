@@ -1,21 +1,23 @@
 import axios from 'axios';
 
+// Please append it to all of your API https://www.omdbapi.com/?i=tt3796198&apikey=5a560d46
+
 const configOMB = {
-    baseURL: 'http://www.omdbapi.com/?apikey=5a560d46',
+    baseURL: 'http://www.omdbapi.com'
 };
-//const key = '5a­560d46';
+
+const key = '5a560d46';
 const axiosInstance = axios.create(configOMB);
 
 export const API = {
     searchFilmsByTitle: (title: string) => {
-        axios
-            .get(`http://www.omdbapi.com/?apikey=5a560d46&t=${title}`)
-            .then((response) => response.data
-            )
+         return axiosInstance
+            .get(`?apikey=${key}&t=${title}`)
+            //.then(response => response.data)
     },
     searchFilmsByType: (title: string, type: string) => {
-        axiosInstance
-            .get(`&${title}&${type}`, {})
-            .then(response => response.data)
+        return axiosInstance
+            .get(`?apikey=${key}&${title}&${type}`, {})
+            //.then(response => response.data)
     }
 };
