@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import {API} from './API';
 import './lesson_3';
-//import axios from "axios";
 
 export const Lesson3 = () => {
     const [searchName, setSearchName] = useState('');
@@ -13,6 +12,9 @@ export const Lesson3 = () => {
         API.searchFilmsByTitle(searchName)
             .then(response => {
                 setSearchResult(response.data.Title);
+                if (!response.data.Title) {
+                    setSearchResult('Ничего не найдено!')
+                }
             })
             .catch(error => {
                 console.log(error);
@@ -20,18 +22,18 @@ export const Lesson3 = () => {
         setSearchName('');
     };
 
-    // const searchFilm = (title: string) => {
-    //         axios
-    //             .get(`http://www.omdbapi.com/?apikey=5a560d46&t=${title}`)
-    //             .then(response => {
-    //                 setSearchResult(response.data.Title)
-    //             })
-    //     setSearchName('');
-    // };
-
     const searchByType = (e: React.MouseEvent<HTMLButtonElement>) => {
         const type: string = e.currentTarget.dataset.t ? e.currentTarget.dataset.t : '';
         API.searchFilmsByType(searchNameByType, type)
+            .then(response => {
+                setSearchResultByType(response.data.Title);
+                if (!response.data.Title) {
+                    setSearchResultByType('Ничего не найдено!')
+                }
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
 
     return (

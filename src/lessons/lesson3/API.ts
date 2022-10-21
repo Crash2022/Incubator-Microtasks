@@ -17,7 +17,7 @@ export const API = {
     },
     searchFilmsByType: (title: string, type: string) => {
         return axiosInstance
-            .get(`?apikey=${key}&${title}&${type}`, {})
+            .get(`?apikey=${key}&t=${title}&type=${type}`, {})
             //.then(response => response.data)
     }
 };
