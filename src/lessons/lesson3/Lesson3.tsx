@@ -8,19 +8,36 @@ export const Lesson3 = () => {
     const [searchNameByType, setSearchNameByType] = useState('');
     const [searchResultByType, setSearchResultByType] = useState('');
 
-    const searchFilm = () => {
-        API.searchFilmsByTitle(searchName)
-            .then(data => {
-                setSearchResult(data.Title);
-                if (!data.Title) {
-                    setSearchResult('Ничего не найдено!')
-                }
-            })
-            .catch(error => {
-                console.log(error);
-            })
-        setSearchName('');
+    // async await method
+    const searchFilm = async () => {
+        try {
+            let resultByTitle = await API.searchFilmsByTitle(searchName);
+            setSearchResult(resultByTitle.Title);
+
+            if (!resultByTitle.Title) {
+                setSearchResult('Ничего не найдено!')
+            }
+            setSearchName('');
+        }
+        catch(error) {
+            console.log(error);
+        }
     };
+
+    // promise method
+    // const searchFilm = () => {
+    //     API.searchFilmsByTitle(searchName)
+    //         .then(data => {
+    //             setSearchResult(data.Title);
+    //             if (!data.Title) {
+    //                 setSearchResult('Ничего не найдено!')
+    //             }
+    //         })
+    //         .catch(error => {
+    //             console.log(error);
+    //         })
+    //     setSearchName('');
+    // };
 
     const searchByType = (e: React.MouseEvent<HTMLButtonElement>) => {
         const type: string = e.currentTarget.dataset.t ? e.currentTarget.dataset.t : '';
