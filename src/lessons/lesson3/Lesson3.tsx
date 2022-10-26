@@ -10,9 +10,9 @@ export const Lesson3 = () => {
 
     const searchFilm = () => {
         API.searchFilmsByTitle(searchName)
-            .then(response => {
-                setSearchResult(response.data.Title);
-                if (!response.data.Title) {
+            .then(data => {
+                setSearchResult(data.Title);
+                if (!data.Title) {
                     setSearchResult('Ничего не найдено!')
                 }
             })

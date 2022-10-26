@@ -13,7 +13,7 @@ export const API = {
     searchFilmsByTitle: (title: string) => {
          return axiosInstance
             .get(`?apikey=${key}&t=${title}`)
-            //.then(response => response.data)
+            .then(response => response.data)
     },
     searchFilmsByType: (title: string, type: string) => {
         return axiosInstance
