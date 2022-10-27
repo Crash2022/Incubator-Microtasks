@@ -38,6 +38,8 @@ console.log('lesson 4');
 // const promise22 = Promise.resolve('Promise Data');
 // console.log('Task 02: promise resolved ', promise22);
 //
+// const promise23 = Promise.resolve('Promise Data').then(data=>console.log(data));
+//
 //
 // function getPromise23() {
 //     const promise21 = new Promise((res, rej) => {
