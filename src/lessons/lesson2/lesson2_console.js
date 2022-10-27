@@ -87,7 +87,7 @@ console.log('Task 03-reset:', counterSetToValue.setToValue())
 
 // Task 04*
 // Реализовать функцию superSum которая принимает число в качестве аргумента, которое указывает на количество слагаемых
-// и что бы корректно работали следующие вызовы:
+// и чтобы корректно работали следующие вызовы:
 // 1) superSum(0) //0
 // 2) superSum(3)(2)(5)(3) //10
 // 3) superSum(3)(2)(5,3) //10
@@ -99,6 +99,26 @@ console.log('Task 03-reset:', counterSetToValue.setToValue())
 
 // Task 05
 // решить все задачи по рекурсии которые даны в конце статьи https://learn.javascript.ru/recursion
+
+// метод решения с помощью цикла
+function sumTo(num) {
+    let sum = 0;
+    for (let i=1; i <= num; i++) {
+        sum = sum + i;
+    }
+    return sum;
+}
+console.log('Task 05-1: ' ,sumTo(4))
+
+// метод решения с помощью рекурсии
+function sumToRecurse(number) {
+    if (number === 1) {
+        return 1
+    } else {
+        return number + sumToRecurse(number-1)
+    }
+}
+console.log('Task 05-2: ' ,sumToRecurse(4))
 
 // Task 06
 // написать функцию, которая повторяет функционал метода flat массива на всю глубину
