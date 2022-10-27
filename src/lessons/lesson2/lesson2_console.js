@@ -120,5 +120,11 @@ function sumToRecurse(number) {
 }
 console.log('Task 05-2: ' ,sumToRecurse(4))
 
+// метод решения с помощью формулы
+function sumToormula(n) {
+    return n * (n + 1) / 2;
+}
+console.log('Task 05-3: ' ,sumToormula(4))
+
 // Task 06
 // написать функцию, которая повторяет функционал метода flat массива на всю глубину
