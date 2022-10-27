@@ -148,7 +148,7 @@ console.log('lesson 4');
 // Получите результаты работы промисов, объедините свойства объектов
 // и выведите в консоль {name, age, city}
 
-/*const namePromise1 = new Promise((res, rej) => {
+const namePromise1 = new Promise((res, rej) => {
     setTimeout(() => {
         res({name: 'Anna'})
     }, 2000)
@@ -160,23 +160,26 @@ const namePromise2 = new Promise((res, rej) => {
 })
 const namePromise3 = new Promise((res, rej) => {
     setTimeout(() => {
-        res({city: 'unknown'})
+        res({city: ''})
     }, 4000)
 })
 
-const allPromises = Promise.all([namePromise1, namePromise2, namePromise3])*/
+const allPromises = Promise.all([namePromise1, namePromise2, namePromise3])
 
-/*allPromises.then(result => {
+allPromises.then(result => {
+    console.log(result);
 
-    console.log(result)
-    // let finalRes = [];
-    // let resArr;
-    // for (let i = 0; i < result.length; i++) {
-    //     finalRes.push(Object.keys(result[i]));
-    // }
-    // resArr = finalRes.join(',');
-    // console.log(resArr);
-})*/
+    const finalObject = Object.assign({}, ...result);
+    console.log(finalObject);
+
+    /*let finalRes = [];
+    let resArr;
+    for (let i = 0; i < result.length; i++) {
+        finalRes.push(Object.keys(result[i]));
+    }
+    resArr = finalRes.join(',');
+    console.log(resArr);*/
+})
 
 // const getObject = () => {
 //     namePromise1
@@ -185,14 +188,13 @@ const allPromises = Promise.all([namePromise1, namePromise2, namePromise3])*/
 //         .then(data => console.log(data))
 //     namePromise3
 //         .then(data => console.log(data))
-//
 // }
 // getObject();
 
 // const newObj = {
-//     {name: 'Anna'},
-//     {age: 16},
-//     {city: 'unknown'}
+//     name: 'Anna',
+//     age: 16,
+//     city: 'unknown'
 // }
 // const keys = Object.keys(newObj)
 // console.log(keys)
