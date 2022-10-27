@@ -102,17 +102,17 @@ console.log('lesson 4');
 // свойства resolve и reject получают ссылки на соответствующие функции
 // resolve и reject. Следующие два обработчика запускают методы resolve и reject.
 
-// const handlePromise = {
-//     promise: null,
-//     resolve: null,
-//     reject: null,
-//     onSuccess: function() {
-//         console.log(`Promise is resolved with data: ${paramName}`);
-//     },
-//     onError: function() {
-//         console.log(`Promise is rejected with error: ${paramName}`);
-//     }
-// }
+const handlePromise = {
+    promise: null,
+    resolve: null,
+    reject: null,
+    onSuccess: function(paramName) {
+        console.log(`Promise is resolved with data: ${paramName}`);
+    },
+    onError: function(paramName) {
+        console.log(`Promise is rejected with error: ${paramName}`);
+    }
+}
 
 // Task 06
 // Создайте промис, который через 1 с возвращает строку "My name is".
@@ -148,38 +148,38 @@ console.log('lesson 4');
 // Получите результаты работы промисов, объедините свойства объектов
 // и выведите в консоль {name, age, city}
 
-const namePromise1 = new Promise((res, rej) => {
-    setTimeout(() => {
-        res({name: 'Anna'})
-    }, 2000)
-})
-const namePromise2 = new Promise((res, rej) => {
-    setTimeout(() => {
-        res({age: 16})
-    }, 3000)
-})
-const namePromise3 = new Promise((res, rej) => {
-    setTimeout(() => {
-        res({city: ''})
-    }, 4000)
-})
-
-const allPromises = Promise.all([namePromise1, namePromise2, namePromise3])
-
-allPromises.then(result => {
-    console.log(result);
-
-    const finalObject = Object.assign({}, ...result);
-    console.log(finalObject);
-
-    /*let finalRes = [];
-    let resArr;
-    for (let i = 0; i < result.length; i++) {
-        finalRes.push(Object.keys(result[i]));
-    }
-    resArr = finalRes.join(',');
-    console.log(resArr);*/
-})
+// const namePromise1 = new Promise((res, rej) => {
+//     setTimeout(() => {
+//         res({name: 'Anna'})
+//     }, 2000)
+// })
+// const namePromise2 = new Promise((res, rej) => {
+//     setTimeout(() => {
+//         res({age: 16})
+//     }, 3000)
+// })
+// const namePromise3 = new Promise((res, rej) => {
+//     setTimeout(() => {
+//         res({city: ''})
+//     }, 4000)
+// })
+//
+// const allPromises = Promise.all([namePromise1, namePromise2, namePromise3])
+//
+// allPromises.then(result => {
+//     console.log(result);
+//
+//     const finalObject = Object.assign({}, ...result);
+//     console.log(finalObject);
+//
+//     /*let finalRes = [];
+//     let resArr;
+//     for (let i = 0; i < result.length; i++) {
+//         finalRes.push(Object.keys(result[i]));
+//     }
+//     resArr = finalRes.join(',');
+//     console.log(resArr);*/
+// })
 
 // const getObject = () => {
 //     namePromise1
