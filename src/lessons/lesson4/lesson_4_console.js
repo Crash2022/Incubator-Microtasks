@@ -13,6 +13,7 @@ console.log('lesson 4');
 // })
 // console.log('Task 01: promise pending... ', promise11);
 //
+//
 // function getPromise() {
 //     const promise12 = new Promise((res, rej) => {
 //         console.log('Promise is created');
@@ -21,7 +22,7 @@ console.log('lesson 4');
 //     return promise12;
 // }
 // getPromise().then(data => console.log(data));
-console.log('---------------------------------------');
+
 
 // Task 02
 // Создайте промис, который после создания сразу же переходит в состояние resolve
@@ -33,8 +34,10 @@ console.log('---------------------------------------');
 // })
 // console.log('Task 02: promise resolved ', promise21);
 //
+//
 // const promise22 = Promise.resolve('Promise Data');
 // console.log('Task 02: promise resolved ', promise22);
+//
 //
 // function getPromise23() {
 //     const promise21 = new Promise((res, rej) => {
@@ -43,7 +46,7 @@ console.log('---------------------------------------');
 //     return promise21;
 // }
 // getPromise23().then(data => console.log(data));
-console.log('---------------------------------------');
+
 
 // Task 03
 // Создайте промис, который после создания сразу же переходит в состояние rejected
@@ -55,10 +58,18 @@ console.log('---------------------------------------');
 // })
 // console.log('Task 03: promise rejected ', promise31);
 //
+//
 // const promise32 = Promise.reject('Promise Error');
 // console.log('Task 03: promise rejected ', promise32);
-console.log('---------------------------------------');
 
+
+// function getPromise33() {
+//     const promise33 = new Promise((res, rej) => {
+//         rej('Promise Error');
+//     })
+//     return promise33;
+// }
+// getPromise33().then(data => console.log(data)).catch(err => console.log(err));
 
 // Task 04
 // Создайте промис, который переходит в состояние resolved через 3с.
@@ -76,7 +87,7 @@ console.log('---------------------------------------');
 //     return promise41;
 // }
 // getPromise41().then(data => console.log(data))
-console.log('---------------------------------------');
+
 
 // Task 05
 // Создайте литерал объекта handlePromise со следующими свойствами:
@@ -110,33 +121,25 @@ console.log('---------------------------------------');
 // Создайте функцию print, которая выводит в консоль значение своего параметра
 // Добавьте два метода then и передайте созданные функции.
 
-function getMyName() {
-    const namePromise = new Promise((res, rej) => {
-        setTimeout(() => {
-            res('My name is')
-        }, 2000)
-    })
-    return namePromise;
-}
-
-//getMyName().then(name => console.log(name));
-//console.log(namePromise);
-
-function onSuccess(successParam) {
-    const result = `${successParam} Alexander`;
-    return result;
-}
-
-//console.log(onSuccess('My name is'));
-
-function print(printParam) {
-    console.log(printParam);
-}
-
-//print('Hello');
-
-// getMyName()
-//     .then(text => console.log(text))
+// function getMyName() {
+//     const namePromise = new Promise((res, rej) => {
+//         setTimeout(() => {
+//             res('My name is')
+//         }, 2000)
+//     })
+//     return namePromise;
+// }
+//
+// function onSuccess(successParam) {
+//     const result = `${successParam} Alexander`;
+//     return result;
+// }
+//
+// function print(printParam) {
+//     console.log(printParam);
+// }
+//
+// getMyName().then(name => onSuccess(name)).then(result => print(result));
 
 
 // Task 7
@@ -145,7 +148,7 @@ function print(printParam) {
 // Получите результаты работы промисов, объедините свойства объектов
 // и выведите в консоль {name, age, city}
 
-const namePromise1 = new Promise((res, rej) => {
+/*const namePromise1 = new Promise((res, rej) => {
     setTimeout(() => {
         res({name: 'Anna'})
     }, 2000)
@@ -161,17 +164,19 @@ const namePromise3 = new Promise((res, rej) => {
     }, 4000)
 })
 
-const allPromises = Promise.all([namePromise1, namePromise2, namePromise3])
+const allPromises = Promise.all([namePromise1, namePromise2, namePromise3])*/
 
-allPromises.then(result => {
-    let finalRes = [];
-    let resArr;
-    for (let i = 0; i < result.length; i++) {
-        finalRes.push(Object.keys(result[i]));
-    }
-    resArr = finalRes.join(',');
-    console.log(resArr);
-})
+/*allPromises.then(result => {
+
+    console.log(result)
+    // let finalRes = [];
+    // let resArr;
+    // for (let i = 0; i < result.length; i++) {
+    //     finalRes.push(Object.keys(result[i]));
+    // }
+    // resArr = finalRes.join(',');
+    // console.log(resArr);
+})*/
 
 // const getObject = () => {
 //     namePromise1
@@ -185,9 +190,9 @@ allPromises.then(result => {
 // getObject();
 
 // const newObj = {
-//     name: 'Anna',
-//     age: 16,
-//     city: 'unknown'
+//     {name: 'Anna'},
+//     {age: 16},
+//     {city: 'unknown'}
 // }
 // const keys = Object.keys(newObj)
 // console.log(keys)
