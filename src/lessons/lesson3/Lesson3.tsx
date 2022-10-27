@@ -54,7 +54,7 @@ export const Lesson3 = () => {
     }
 
     return (
-        <div>
+        <div style={{border: '1px solid black', padding: '10px', marginTop: '10px'}}>
             <h1>Promises</h1>
             <div>
                 <h3><p>Search by name:</p></h3>
