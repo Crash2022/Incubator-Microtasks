@@ -200,3 +200,27 @@ const handlePromise = {
 // }
 // const keys = Object.keys(newObj)
 // console.log(keys)
+
+
+// Tasks from VanillaJS
+// Task 01 - create get function
+
+const findUserInDB = (id) => {
+    const users = [
+        {id: 1, name: 'Ivan', age: 33},
+        {id: 2, name: 'Petr', age: 28},
+        {id: 3, name: 'Sveta', age: 25},
+    ]
+
+    return new Promise((res, rej) => {
+        setTimeout(() => {
+            const user = users.find(u => u.id === id);
+            if(user === null) {
+                rej('user not found');
+            } else {
+                res(user)
+            }
+        }, 2000)
+    })
+}
+console.log(findUserInDB(2).then(data => console.log(data)));

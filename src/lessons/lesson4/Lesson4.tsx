@@ -5,10 +5,10 @@ const handlePromise: any = {
     promise: null,
     resolve: null,
     reject: null,
-    onSuccess: function (paramName: any) {
+    onSuccess: function (paramName: string) {
         console.log(`Promise is resolved with data: ${paramName}`);
     },
-    onError: function (paramName: any) {
+    onError: function (paramName: string) {
         console.log(`Promise is rejected with error: ${paramName}`);
     }
 }
