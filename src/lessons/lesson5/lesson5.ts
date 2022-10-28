@@ -52,21 +52,57 @@ console.log(greetingResult());
 // increment; - увеличивает значение счетчика на 1
 // decrement; - уменьшает значение счетчика на 1
 // set current count; - принимает и присваивает значение счетчику
-// rest current count - устанавливает значение счетчика равным 0
+// reset current count - устанавливает значение счетчика равным 0
 // все методы должны ссылаться на сам объект
+
+function Counter(value: number) {
+    this.increment = function() {
+        return value + 1;
+    }
+    this.decrement = function() {
+        return value - 1;
+    }
+    this.reset = function() {
+        return value = 0;
+    }
+    this.setCounter = function(value: number) {
+        return value;
+    }
+    // this.getCounter = function() {
+    //     return value;
+    // }
+}
+
+const counterIncrement = new Counter(5);
+const counterDecrement = new Counter(5);
+const counterReset = new Counter();
+const counterSet = new Counter();
+//const counterGet = new Counter();
+console.log(counterIncrement.increment())
+console.log(counterDecrement.decrement())
+console.log(counterReset.reset())
+console.log(counterSet.setCounter(3))
+//console.log(counterGet.getCounter())
+
 
 // Task 03
 // переделайте код из Task 02, что бы сработал следующий код:
 // counter.setCurrentCount(10).increment().increment().increment().decrement().getCurrentCount() // 12
 
+
+
 // Task 04
 // Написать функцию конструктор myFirstConstructorFunc которая принимает 2 параметра name и age и возвращает объект
 // у которого будут эти свойства и метод greeting из Task 01
+
+
 
 // Task 05 есть 2 объекта One и Two. С помощью bind и метода sayHello заставьте поздороваться объект One
 
 let One = {name: 'One'};
 let Two = {name: 'Two', sayHello: function() {console.log(`Hello, my name is ${this.name}`)}};
+
+
 
 // Task 06
 // создайте объект helperObj у которого есть следующие методы:
@@ -86,7 +122,6 @@ function sumTwoNumbers(a:number,b:number):number {return a + b};
 // 4) Создать метод hi у объекта One, который всегда вызывает метод greeting объекта helperObj от имени Two
 
 // Реализовать задачи 2-4 из Bind с помощью Call
-
 
 
 // just a plug

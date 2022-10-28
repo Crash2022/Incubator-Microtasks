@@ -30,11 +30,13 @@ let someObj = {
     age: 32
 }
 
+// обычный метод
 // function greeting(name, age) {
 //     return `My name is ${name}. I am ${age}`;
 // }
 // console.log(greeting('Alex', 35));
 
+// правильный метод
 function greeting() {
     return `My name is ${this.name}. I am ${this.age}`;
 }
@@ -47,8 +49,37 @@ console.log(greetingResult());
 // increment; - увеличивает значение счетчика на 1
 // decrement; - уменьшает значение счетчика на 1
 // set current count; - принимает и присваивает значение счетчику
-// rest current count - устанавливает значение счетчика равным 0
+// reset current count - устанавливает значение счетчика равным 0
 // все методы должны ссылаться на сам объект
+
+function Counter(value) {
+    this.increment = function() {
+        return value + 1;
+    }
+    this.decrement = function() {
+        return value - 1;
+    }
+    this.reset = function() {
+        return value = 0;
+    }
+    this.setCounter = function(value) {
+        return value;
+    }
+    // this.getCounter = function() {
+    //     return value;
+    // }
+}
+
+const counterIncrement = new Counter(5);
+const counterDecrement = new Counter(5);
+const counterReset = new Counter();
+const counterSet = new Counter();
+//const counterGet = new Counter();
+console.log(counterIncrement.increment())
+console.log(counterDecrement.decrement())
+console.log(counterReset.reset())
+console.log(counterSet.setCounter(3))
+//console.log(counterGet.getCounter())
 
 // Task 03
 // переделайте код из Task 02, что бы сработал следующий код:
