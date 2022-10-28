@@ -35,6 +35,17 @@ let someObj:someObjType = {
     age: 32
 }
 
+// function greeting(name: string, age: number) {
+//     return `My name is ${name}. I am ${age}`;
+// }
+// greeting('Alex', 35);
+
+const greeting = function(this: someObjType) {
+    return `My name is ${this.name}. I am ${this.age}`;
+}
+const greetingResult = greeting.bind(someObj);
+console.log(greetingResult());
+
 // Task 02
 // реализовать счетчик counter в виде объекта со следующими методами:
 // get current count; - выводит текущее значение счетчика
