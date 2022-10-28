@@ -1,26 +1,32 @@
 import React from 'react'
 import './lesson_4';
 
-const handlePromise: any = {
-    promise: null,
-    resolve: null,
-    reject: null,
-    onSuccess: function (paramName: string) {
-        console.log(`Promise is resolved with data: ${paramName}`);
-    },
-    onError: function (paramName: string) {
-        console.log(`Promise is rejected with error: ${paramName}`);
-    }
-}
-
 export const Lesson4 = () => {
 
+    const handlePromise: any = {
+        promise: null,
+        resolve: null,
+        reject: null,
+        onSuccess: function (paramName: string) {
+            console.log(`Promise is resolved with data: ${paramName}`);
+        },
+        onError: function (paramName: string) {
+            console.log(`Promise is rejected with error: ${paramName}`);
+        }
+    }
+
+    // можно сделать тоже самое через асинхронную функцию (вернёт промис)
+    // const onSuccess = async (paramName: string) => {
+    //     console.log(`Promise is resolved with data: ${paramName}`);
+    // }
+
     const createPromise = () => {
-        const promise = new Promise((resolve, reject) => {
+        handlePromise.promise = new Promise((resolve, reject) => {
             handlePromise.resolve = resolve;
             handlePromise.reject = reject;
         });
-        handlePromise.promise = promise;
+        //handlePromise.promise = promise;
+        console.log('Promise created');
     }
     const resolvePromise = () => {
         handlePromise.resolve('RESOLVED');
