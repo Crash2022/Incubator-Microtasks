@@ -206,12 +206,16 @@ export const Lesson5 = () => {
         }
 
         greeting() {
-            return {name: this.name, age: this.age}
+            return `My name is ${this.name}, i'm ${this.age} years old`;
+        }
+        myObject() {
+            return {name: this.name, age: this.age};
         }
     }
 
     const newMan = new MyFirstConstructorFunc('Eugene', 32);
     console.log(newMan.greeting());
+    console.log(newMan.myObject());
 
     /*--------------------------------------------------------*/
 
