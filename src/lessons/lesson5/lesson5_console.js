@@ -125,11 +125,17 @@ function MyFirstConstructorFunc(name, age) {
     this.name = name;
     this.age = age;
 
-    return {name: this.name, age: this.age}
+    this.greeting = function() {
+        return `My name is ${this.name}, i'm ${this.age} years old`;
+    }
+    this.myObject = function() {
+        return {name: this.name, age: this.age};
+    }
 }
 
 const newMan = new MyFirstConstructorFunc('Eugene', 32);
-console.log(newMan);
+console.log(newMan.greeting());
+console.log(newMan.myObject());
 
 
 // Task 05 есть 2 объекта One и Two. С помощью bind и метода sayHello заставьте поздороваться объект One
