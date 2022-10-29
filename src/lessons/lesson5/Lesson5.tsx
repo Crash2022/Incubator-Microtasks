@@ -219,6 +219,22 @@ export const Lesson5 = () => {
 
     /*--------------------------------------------------------*/
 
+    // Task 05
+
+    /*let One = {
+        name: 'One'
+    };
+    let Two = {
+        name: 'Two',
+        sayHello: function() {
+            console.log(`Hello, my name is ${this.name}`);
+        }
+    };
+
+    Two.sayHello.call(One)*/
+
+    /*--------------------------------------------------------*/
+
     return (
         <div style={{textAlign: 'center'}}>Lesson5</div>
     );

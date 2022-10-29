@@ -152,7 +152,7 @@ let Two = {
     }
 };
 
-Two.sayHello.call(One, One.name)
+Two.sayHello.call(One)
 
 // Task 06
 // создайте объект helperObj у которого есть следующие методы:
