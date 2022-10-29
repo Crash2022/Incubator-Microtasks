@@ -179,7 +179,7 @@ export const Lesson5 = () => {
             setCounter(value: number) {
                 return value;
             }
-            // this.getCounter = function() {
+            // getCounter = function() {
             //     return value;
             // }
     }
