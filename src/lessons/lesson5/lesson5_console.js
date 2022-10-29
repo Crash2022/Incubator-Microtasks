@@ -162,7 +162,7 @@ Two.sayHello.call(One);*/
 // greeting - используется функция sayHello из Task 05
 // можно использовать @ts-ignore
 
-const user = {
+/*const user = {
     name: 'Ivan',
     age: 30
 }
@@ -185,12 +185,12 @@ console.log('startObject ', user);
 helperObj.changeName.call(user, 'Viktor'); // работает, но почему-то подчёркивает
 helperObj.setAge.call(user, 35); // работает, но почему-то подчёркивает
 console.log('changedObject ',user);
-helperObj.greeting.call(user);
-
+helperObj.greeting.call(user);*/
 
 // Bind
 // 1) Дана функция sumTwoNumbers, реализовать функцию bindNumber, которая принимает функцию sumTwoNumbers и число, и
 // возвращает другую функцию, которая также принимает число и возвращает сумму этих чисел. Замыкание использовать нельзя.
+
 
 //function sumTwoNumbers(a:number,b:number):number {return a + b};
 
@@ -200,3 +200,24 @@ helperObj.greeting.call(user);
 // 4) Создать метод hi у объекта One, который всегда вызывает метод greeting объекта helperObj от имени Two
 
 // Реализовать задачи 2-4 из Bind с помощью Call
+
+// Task Bind 02
+
+const One = {
+    name: '',
+    age: 30
+}
+
+const helperObj = {
+    setName: function(name) {
+        this.name = name;
+    }
+}
+
+function oneHelperObjFunc(One,helperObj) {
+   function otherFunc(text) {
+       One.name = text;
+       return this.name;
+   }
+}
+console.log(oneHelperObjFunc.call(One, 'Tanya'));
