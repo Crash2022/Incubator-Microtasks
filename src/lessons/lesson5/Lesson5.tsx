@@ -25,7 +25,7 @@ console.log('Lesson 5');
 // Дан объект someObj, реализуйте функцию greeting и присвойте ее ключу объекта с аналогичным именем.
 // Функция должна вернуть строку `My name is ${name}. I am ${age}`, где name и age берутся из свойств объекта
 
-type someObjType = {
+/*type someObjType = {
     name: string;
     age: number;
 }
@@ -44,7 +44,7 @@ const greeting = function(this: someObjType) {
     return `My name is ${this.name}. I am ${this.age}`;
 }
 const greetingResult = greeting.bind(someObj);
-console.log(greetingResult());
+console.log(greetingResult());*/
 
 // Task 02
 // реализовать счетчик counter в виде объекта со следующими методами:
@@ -55,15 +55,24 @@ console.log(greetingResult());
 // reset current count - устанавливает значение счетчика равным 0
 // все методы должны ссылаться на сам объект
 
-function Counter(value: number) {
+/*type CounterType = {
+    value: number
+    increment: () => number
+    decrement: () => number
+    reset: () => number
+    setCounter: (value: number) => typeof value
+    //getCounter: () => void
+}
+
+const Counter = function(this: CounterType) {
     this.increment = function() {
-        return value + 1;
+        return this.value + 1;
     }
     this.decrement = function() {
-        return value - 1;
+        return this.value - 1;
     }
     this.reset = function() {
-        return value = 0;
+        return this.value = 0;
     }
     this.setCounter = function(value: number) {
         return value;
@@ -82,7 +91,7 @@ console.log(counterIncrement.increment())
 console.log(counterDecrement.decrement())
 console.log(counterReset.reset())
 console.log(counterSet.setCounter(3))
-//console.log(counterGet.getCounter())
+//console.log(counterGet.getCounter())*/
 
 
 // Task 03
@@ -90,18 +99,19 @@ console.log(counterSet.setCounter(3))
 // counter.setCurrentCount(10).increment().increment().increment().decrement().getCurrentCount() // 12
 
 
-
 // Task 04
 // Написать функцию конструктор myFirstConstructorFunc которая принимает 2 параметра name и age и возвращает объект
 // у которого будут эти свойства и метод greeting из Task 01
 
 
-
 // Task 05 есть 2 объекта One и Two. С помощью bind и метода sayHello заставьте поздороваться объект One
 
 let One = {name: 'One'};
-let Two = {name: 'Two', sayHello: function() {console.log(`Hello, my name is ${this.name}`)}};
-
+let Two = {
+    name: 'Two', sayHello: function () {
+        console.log(`Hello, my name is ${this.name}`)
+    }
+};
 
 
 // Task 06
@@ -114,7 +124,9 @@ let Two = {name: 'Two', sayHello: function() {console.log(`Hello, my name is ${t
 // Bind
 // 1) Дана функция sumTwoNumbers, реализовать функцию bindNumber которая принимает функцию sumTwoNumbers и число, и
 // возвращает другую функцию, которое также принимает число и возвращает сумму этих чисел. Замыкание использовать нельзя
-function sumTwoNumbers(a:number,b:number):number {return a + b};
+function sumTwoNumbers(a: number, b: number): number {
+    return a + b
+};
 
 // 2) Напишите функцию которая принимает первым аргументом объект One, а вторым helperObj. Данная функция
 // возвращает другую функцию которая принимает строку в качестве аргумента и устанавливает ее свойству name объекта One
@@ -125,4 +137,67 @@ function sumTwoNumbers(a:number,b:number):number {return a + b};
 
 
 // just a plug
-export default () => {};
+// export default () => {};
+
+/*--------------------------------------------------------*/
+
+export const Lesson5 = () => {
+
+    // Task 01
+
+    /*type someObjType = {
+        name: string;
+        age: number;
+    }
+
+    let someObj:someObjType = {
+        name: 'Eugene',
+        age: 32
+    }
+
+    const greeting = function(this: someObjType) {
+        return `My name is ${this.name}. I am ${this.age}`;
+    }
+    const greetingResult = greeting.bind(someObj);
+    console.log(greetingResult());*/
+
+    /*--------------------------------------------------------*/
+
+    class Counter {
+        constructor(public value: number) {
+            this.value = value;
+        }
+            increment() {
+                return this.value + 1;
+            }
+            decrement() {
+                return this.value - 1;
+            }
+            reset() {
+                return this.value = 0;
+            }
+            setCounter(value: number) {
+                return value;
+            }
+            // this.getCounter = function() {
+            //     return value;
+            // }
+    }
+
+    const counterIncrement = new Counter(5);
+    const counterDecrement = new Counter(5);
+    const counterReset = new Counter(0);
+    const counterSet = new Counter(3);
+    //const counterGet = new Counter();
+    console.log(counterIncrement.increment())
+    console.log(counterDecrement.decrement())
+    console.log(counterReset.reset())
+    console.log(counterSet.setCounter(3))
+    //console.log(counterGet.getCounter())
+
+    /*--------------------------------------------------------*/
+
+    return (
+        <div style={{textAlign: 'center'}}>Lesson5</div>
+    );
+}
