@@ -81,7 +81,7 @@ export const Lesson5 = () => {
 
     // Task 03
 
-    class Counter03 {
+    /*class Counter03 {
         constructor(public value: number) {
             this.value = value;
             return this;
@@ -109,7 +109,7 @@ export const Lesson5 = () => {
 
     const counter = new Counter03(5);
     console.log(counter.setCurrentCount(10).increment().increment()
-        .increment().decrement().getCurrentCount());
+        .increment().decrement().getCurrentCount());*/
 
     /*--------------------------------------------------------*/
 
@@ -153,7 +153,7 @@ export const Lesson5 = () => {
 
     // Task 06
 
-    /*type HelperObjType = {
+    type HelperObjType = {
         name?: string
         age?: number
         changeName: (name: string) => string
@@ -176,7 +176,7 @@ export const Lesson5 = () => {
             return this.age;
         },
         greeting: function() {
-            console.log(`My name is ${this.name}, im ${this.age} years old`);
+            console.log(`My name is ${this.name}, i'm ${this.age} years old`);
         }
     }
 
@@ -184,7 +184,7 @@ export const Lesson5 = () => {
     helperObj.changeName.call(user, 'Viktor');
     helperObj.setAge.call(user, 35);
     console.log('changedObject ',user);
-    helperObj.greeting.call(user);*/
+    helperObj.greeting.call(user);
 
     /*--------------------------------------------------------*/
 

@@ -177,7 +177,7 @@ const helperObj = {
         return this.age;
     },
     greeting: function() {
-        console.log(`My name is ${this.name}, im ${this.age} years old`);
+        console.log(`My name is ${this.name}, i'm ${this.age} years old`);
     }
 }
 
