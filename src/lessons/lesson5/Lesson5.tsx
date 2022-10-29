@@ -143,7 +143,7 @@ function sumTwoNumbers(a: number, b: number): number {
 
 export const Lesson5 = () => {
 
-    // Task 01
+    // Task 02
 
     /*type someObjType = {
         name: string;
@@ -163,7 +163,7 @@ export const Lesson5 = () => {
 
     /*--------------------------------------------------------*/
 
-    class Counter {
+    /*class Counter {
         constructor(public value: number) {
             this.value = value;
         }
@@ -193,7 +193,25 @@ export const Lesson5 = () => {
     console.log(counterDecrement.decrement())
     console.log(counterReset.reset())
     console.log(counterSet.setCounter(3))
-    //console.log(counterGet.getCounter())
+    //console.log(counterGet.getCounter())*/
+
+    /*--------------------------------------------------------*/
+
+    // Task 04
+
+    class MyFirstConstructorFunc {
+        constructor(public name: string, public age: number) {
+            this.name = name;
+            this.age = age;
+        }
+
+        greeting() {
+            return {name: this.name, age: this.age}
+        }
+    }
+
+    const newMan = new MyFirstConstructorFunc('Eugene', 32);
+    console.log(newMan.greeting());
 
     /*--------------------------------------------------------*/
 

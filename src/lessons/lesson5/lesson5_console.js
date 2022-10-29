@@ -124,6 +124,8 @@ Counter.setCurrentCount(10).increment().increment().increment().decrement().getC
 function MyFirstConstructorFunc(name, age) {
     this.name = name;
     this.age = age;
+
+    return {name: this.name, age: this.age}
 }
 
 const newMan = new MyFirstConstructorFunc('Eugene', 32);
