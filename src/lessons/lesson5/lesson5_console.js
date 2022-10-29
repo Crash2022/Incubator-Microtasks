@@ -191,8 +191,19 @@ helperObj.greeting.call(user);*/
 // 1) Дана функция sumTwoNumbers, реализовать функцию bindNumber, которая принимает функцию sumTwoNumbers и число, и
 // возвращает другую функцию, которая также принимает число и возвращает сумму этих чисел. Замыкание использовать нельзя.
 
-
 //function sumTwoNumbers(a:number,b:number):number {return a + b};
+
+/*function sumTwoNumbers(a,b) {
+    return a+b;
+}
+//мой метод
+//const bindNumber = sumTwoNumbers.bind(null, 3, 20);
+
+//метод из задачи
+function bindNumber(fn, n) {
+    return fn.bind(null, n)
+}
+console.log(bindNumber(sumTwoNumbers, 3)(2));*/
 
 // 2) Напишите функцию которая принимает первым аргументом объект One, а вторым helperObj. Данная функция
 // возвращает другую функцию которая принимает строку в качестве аргумента и устанавливает ее свойству name объекта One
@@ -204,20 +215,37 @@ helperObj.greeting.call(user);*/
 // Task Bind 02
 
 const One = {
-    name: '',
-    age: 30
+    name: 'one',
+    hi: function() {
+        helperObj.greeting.call(Two)
+    }
+}
+const Two = {
+    name: 'two',
+    age: 20
 }
 
 const helperObj = {
-    setName: function(name) {
+    changeName: function(name) {
         this.name = name;
+        return this.name;
+    },
+    setAge: function(age) {
+        this.age = age;
+        return this.age;
+    },
+    greeting: function() {
+        console.log(`My name is ${this.name}, i'm ${this.age} years old`);
     }
 }
 
-function oneHelperObjFunc(One,helperObj) {
-   function otherFunc(text) {
-       One.name = text;
-       return this.name;
+function oneHelperObjFunc(obj,fn) {
+   return function otherFunc(arg) {
+       fn.call(obj, arg)
    }
 }
-console.log(oneHelperObjFunc.call(One, 'Tanya'));
+oneHelperObjFunc(One, helperObj.changeName)('Alexia');
+oneHelperObjFunc(Two, helperObj.setAge)(35);
+console.log(One)
+console.log(Two)
+One.hi()
