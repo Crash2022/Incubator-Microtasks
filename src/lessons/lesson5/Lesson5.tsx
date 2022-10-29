@@ -199,7 +199,7 @@ export const Lesson5 = () => {
 
     // Task 04
 
-    class MyFirstConstructorFunc {
+    /*class MyFirstConstructorFunc {
         constructor(public name: string, public age: number) {
             this.name = name;
             this.age = age;
@@ -215,7 +215,7 @@ export const Lesson5 = () => {
 
     const newMan = new MyFirstConstructorFunc('Eugene', 32);
     console.log(newMan.greeting());
-    console.log(newMan.myObject());
+    console.log(newMan.myObject());*/
 
     /*--------------------------------------------------------*/
 

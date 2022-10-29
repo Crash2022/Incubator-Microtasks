@@ -140,7 +140,8 @@ console.log(newMan.greeting());
 console.log(newMan.myObject());
 
 
-// Task 05 есть 2 объекта One и Two. С помощью bind и метода sayHello заставьте поздороваться объект One
+// Task 05
+// Есть 2 объекта One и Two. С помощью bind и метода sayHello заставьте поздороваться объект One
 
 //let One = {name: 'One'};
 //let Two = {name: 'Two', sayHello: function() {console.log(`Hello, my name is ${this.name}`)}};
