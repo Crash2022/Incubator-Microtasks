@@ -52,69 +52,10 @@ console.log(greetingResult());*/
 // reset current count - устанавливает значение счетчика равным 0
 // все методы должны ссылаться на сам объект
 
-/*function Counter(value) {
-    this.increment = function() {
-        return value + 1;
-    }
-    this.decrement = function() {
-        return value - 1;
-    }
-    this.reset = function() {
-        return value = 0;
-    }
-    this.setCounter = function(value) {
-        return value;
-    }
-    // this.getCounter = function() {
-    //     return value;
-    // }
-}
-
-const counterIncrement = new Counter(5);
-const counterDecrement = new Counter(5);
-const counterReset = new Counter();
-const counterSet = new Counter();
-//const counterGet = new Counter();
-console.log(counterIncrement.increment())
-console.log(counterDecrement.decrement())
-console.log(counterReset.reset())
-console.log(counterSet.setCounter(3))
-//console.log(counterGet.getCounter())*/
 
 // Task 03
 // переделайте код из Task 02, что бы сработал следующий код:
 // counter.setCurrentCount(10).increment().increment().increment().decrement().getCurrentCount() // 12
-
-/*function Counter(value) {
-    this.increment = function() {
-        return value + 1;
-    }
-    this.decrement = function() {
-        return value - 1;
-    }
-    this.reset = function() {
-        return value = 0;
-    }
-    this.setCounter = function(value) {
-        return value;
-    }
-    // this.getCounter = function() {
-    //     return value;
-    // }
-}
-
-const counterIncrement = new Counter(5);
-const counterDecrement = new Counter(5);
-const counterReset = new Counter();
-const counterSet = new Counter();
-//const counterGet = new Counter();
-console.log(counterIncrement.increment())
-console.log(counterDecrement.decrement())
-console.log(counterReset.reset())
-console.log(counterSet.setCounter(3))
-//console.log(counterGet.getCounter())
-
-Counter.setCurrentCount(10).increment().increment().increment().decrement().getCurrentCount() // 12*/
 
 
 // Task 04
@@ -145,7 +86,6 @@ console.log(newMan.myObject());
 
 //let One = {name: 'One'};
 //let Two = {name: 'Two', sayHello: function() {console.log(`Hello, my name is ${this.name}`)}};
-
 
 
 // Task 06
