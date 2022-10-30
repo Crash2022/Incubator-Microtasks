@@ -168,12 +168,10 @@ export const Lesson5 = () => {
 
     const helperObj: HelperObjType = {
         changeName: function(name: string) {
-            this.name = name;
-            return this.name;
+            return this.name = name;
         },
         setAge: function(age: number) {
-            this.age = age;
-            return this.age;
+            return this.age = age;
         },
         greeting: function() {
             console.log(`My name is ${this.name}, i'm ${this.age} years old`);

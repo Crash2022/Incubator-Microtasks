@@ -169,12 +169,10 @@ Two.sayHello.call(One);*/
 
 const helperObj = {
     changeName: function(name) {
-        this.name = name;
-        return this.name;
+        return this.name = name;
     },
     setAge: function(age) {
-        this.age = age;
-        return this.age;
+        return this.age = age;
     },
     greeting: function() {
         console.log(`My name is ${this.name}, i'm ${this.age} years old`);
@@ -227,12 +225,10 @@ const Two = {
 
 const helperObj = {
     changeName: function(name) {
-        this.name = name;
-        return this.name;
+        return this.name = name;
     },
     setAge: function(age) {
-        this.age = age;
-        return this.age;
+        return this.age = age;
     },
     greeting: function() {
         console.log(`My name is ${this.name}, i'm ${this.age} years old`);
