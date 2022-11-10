@@ -15,7 +15,7 @@ export const Lesson3 = () => {
             setSearchResult(resultByTitle.Title);
 
             if (!resultByTitle.Title) {
-                setSearchResult('Ничего не найдено!')
+                setSearchResult('Ничего не найдено!');
             }
             setSearchName('');
         }
