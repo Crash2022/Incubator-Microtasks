@@ -20,9 +20,9 @@ console.log('Lesson 7');
 // walk => `${this.name} walking`
 // проверить, что методы работают
 
-export default class Animal {
+class Animal {
     constructor(name) {
-        return this.name = name;
+        this.name = name;
     }
     walk() {
         console.log(`${this.name} walking`);
