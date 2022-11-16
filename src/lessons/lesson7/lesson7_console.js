@@ -21,9 +21,13 @@ console.log('Lesson 7');
 // проверить, что методы работают
 
 class Animal {
+
+    name = 'Animal'; // дефолтное значение
+
     constructor(name) {
-        this.name = name;
+        // this.name = name; // здесь главнее, чем значение по дефолту
     }
+
     walk() {
         console.log(`${this.name} walking`);
     }
@@ -35,7 +39,8 @@ class Animal {
     }
 }
 
-const dog = new Animal('dog');
+const dog = new Animal();
+console.log('---Task 01---');
 dog.walk();
 dog.eat();
 dog.sleep();
@@ -46,11 +51,14 @@ dog.sleep();
 // проверить, что все методы работают
 
 class Monkey extends Animal {
-    // надо или нет ?!
-    // constructor(name = 'monkey') {
-    //     super(name);
-    //     this.name = name;
-    // }
+
+    name = 'Monkey';
+
+    constructor() { // сюда можно передать доп. свойства для этого класса
+        super(); // ---> this // наследование от базового конструктора
+        // this.name = name // значения для данного класса
+    }
+
     roar() {
         console.log(`${this.name} roaring`);
     }
@@ -59,9 +67,11 @@ class Monkey extends Animal {
     }
 }
 
-const monkey = new Monkey('monkey');
+const monkey = new Monkey();
+console.log('---Task 02---');
 monkey.roar();
 monkey.climb();
+
 monkey.walk();
 monkey.eat();
 monkey.sleep();
@@ -72,10 +82,9 @@ monkey.sleep();
 // проверить, что все методы работают
 
 class Human extends Monkey {
-    constructor(name = 'Human') {
-        super(name); // ?!
-        //this.name = name;
-    }
+
+    name = 'Human';
+
     speak() {
         console.log(`${this.name} speaking`);
     }
@@ -85,8 +94,10 @@ class Human extends Monkey {
 }
 
 const human = new Human();
+console.log('---Task 03---');
 human.speak();
 human.think();
+
 human.roar();
 human.climb();
 
