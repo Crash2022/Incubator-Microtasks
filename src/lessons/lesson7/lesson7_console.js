@@ -20,7 +20,7 @@ console.log('Lesson 7');
 // walk => `${this.name} walking`
 // проверить, что методы работают
 
-class Animal {
+export default class Animal {
     constructor(name) {
         return this.name = name;
     }
@@ -46,10 +46,11 @@ dog.sleep();
 // проверить, что все методы работают
 
 class Monkey extends Animal {
-    constructor(name = 'Monkey') {
-        super(name);
-        this.name = name;
-    }
+    // надо или нет ?!
+    // constructor(name = 'monkey') {
+    //     super(name);
+    //     this.name = name;
+    // }
     roar() {
         console.log(`${this.name} roaring`);
     }
@@ -58,9 +59,12 @@ class Monkey extends Animal {
     }
 }
 
-const monkey = new Monkey();
+const monkey = new Monkey('monkey');
 monkey.roar();
 monkey.climb();
+monkey.walk();
+monkey.eat();
+monkey.sleep();
 
 //Task 03
 // Реализовать класс Human на базе класса Monkey, конструктор принимает name(по умолчанию 'Human') в качестве
@@ -69,8 +73,8 @@ monkey.climb();
 
 class Human extends Monkey {
     constructor(name = 'Human') {
-        super(name);
-        this.name = name;
+        super(name); // ?!
+        //this.name = name;
     }
     speak() {
         console.log(`${this.name} speaking`);
@@ -83,6 +87,8 @@ class Human extends Monkey {
 const human = new Human();
 human.speak();
 human.think();
+human.roar();
+human.climb();
 
 // Task 04
 // Реализовать таски 01-03 через функции конструкторы в отдельном JS файле, реализовать наследование
