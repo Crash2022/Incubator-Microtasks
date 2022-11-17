@@ -100,6 +100,11 @@ class Human extends Monkey {
     think() {
         console.log(`${this.name} thinking`);
     }
+    // наследование + добавление нового функицонала
+    climb() {
+        super.climb();
+        console.log('to the mountain');
+    }
 }
 
 const human = new Human('Human', 20);
