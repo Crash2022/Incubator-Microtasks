@@ -25,7 +25,7 @@ export class Animal {
     name = 'Animal'; // дефолтное значение
 
     constructor(name) {
-        // this.name = name; // здесь главнее, чем значение по дефолту
+       // this.name = name; // здесь главнее, чем значение по дефолту, поэтому при вызове обязательно указать
     }
 
     walk() {
@@ -39,7 +39,7 @@ export class Animal {
     }
 }
 
-const dog = new Animal();
+const dog = new Animal(); // если в constructor указали this, необходимо передать в ('name')
 console.log('---Task 01---');
 dog.walk();
 dog.eat();
@@ -55,9 +55,9 @@ class Monkey extends Animal {
     name = 'Monkey'; // дефолтное значение
     // и добавить в constructor и super это свойство
 
-    constructor(name) { // сюда можно передать наследованные и *доп.свойства для этого класса
+    constructor(name) { // сюда нужно передавать наследованные и можно *доп.свойства для этого класса
         super(name); // ---> this // наследование от базового конструктора (наслед. свойства)
-        // this.name = name // конкретные значения для данного класса
+        // this.name = name // конкретные доп.свойства для данного класса
         // если не назначить дефолт, то надо будет написать при вызове new Monkey('name')
     }
 
@@ -86,6 +86,10 @@ monkey.sleep();
 class Human extends Monkey {
 
     name = 'Human';
+
+    constructor(name) {
+        super(name);
+    }
 
     speak() {
         console.log(`${this.name} speaking`);
