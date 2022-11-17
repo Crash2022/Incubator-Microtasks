@@ -20,7 +20,7 @@ console.log('Lesson 7');
 // walk => `${this.name} walking`
 // проверить, что методы работают
 
-class Animal {
+export class Animal {
 
     name = 'Animal'; // дефолтное значение
 

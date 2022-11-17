@@ -1,4 +1,4 @@
-import Animal from "./lesson7_console";
+import {Animal} from "./lesson7_console.js";
 
 console.log('Lesson 7-4');
 
@@ -20,10 +20,15 @@ console.log('Lesson 7-4');
 // Реализовать таски 01-03 через функции конструкторы в отдельном JS файле, реализовать наследование
 
 class Cat extends Animal {
+    name = 'Cat';
 
+    constructor() { // сюда можно передать доп. свойства для этого класса
+        super(); // ---> this // наследование от базового конструктора
+        // this.name = name // значения для данного класса
+    }
 }
 
-const cat = new Animal('Cat');
+const cat = new Cat();
 cat.eat();
 
 // Task 05
