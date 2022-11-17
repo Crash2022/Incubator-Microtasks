@@ -85,21 +85,24 @@ monkey.sleep();
 
 class Human extends Monkey {
 
-    name = 'Human';
+    // сделал без дефолтного значения
+    // name = 'Human';
 
-    constructor(name) {
+    constructor(name, age) {
         super(name);
+        this.name = name;
+        this.age = age;
     }
 
     speak() {
-        console.log(`${this.name} speaking`);
+        console.log(`${this.name} ${this.age} years old is speaking`);
     }
     think() {
         console.log(`${this.name} thinking`);
     }
 }
 
-const human = new Human();
+const human = new Human('Human', 20);
 console.log('---Task 03---');
 human.speak();
 human.think();
