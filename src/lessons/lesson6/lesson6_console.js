@@ -93,6 +93,26 @@ console.log(newTaskTwo);
 // Создать метод выводящий время в строке формата HH:MM:SS
 // Создать класс по вышеуказанному описанию
 
+class Clock {
+
+    constructor(hour, minute, second) {
+        this.hour = hour;
+        this.minute = minute;
+        this.second = second;
+    }
+    showTime() {
+        console.log(`${this.hour}:${this.minute}:${this.second}`);
+    }
+    showRealTime() {
+        console.log(new Date);
+    }
+}
+
+console.log('---Task 03---');
+const time = new Clock(13,17,10);
+time.showTime();
+time.showRealTime();
+
 // Task 04
 // Класс Покупатель: Фамилия, Имя, Адрес, Номер банковского счета;
 // Методы: установка значений атрибутов, получение значений атрибутов, вывод информации.
