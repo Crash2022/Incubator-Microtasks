@@ -13,32 +13,39 @@ console.log('Lesson 6');
 // Добавить возможность вывода фамилий и номеров групп студентов, имеющих оценки, равные только 4 или 5.
 
 class Student {
+
+    students = [
+        {firstName: 'One', secondName: 'Two', groupNumber: 1, marks: [3, 4, 2, 5, 5, 4, 3]},
+        {firstName: 'Three', secondName: 'Four', groupNumber: 1, marks: [3, 4, 2]},
+        {firstName: 'Five', secondName: 'Five', groupNumber: 1, marks: [3, 4, 2, 5]}
+    ]
+
     constructor(firstName, secondName, groupNumber, marks) {
-        this.firstName = firstName;
-        this.secondName = secondName;
-        this.groupNumber = groupNumber;
-        this.marks = marks;
+        // this.firstName = firstName;
+        // this.secondName = secondName;
+        // this.groupNumber = groupNumber;
+        // this.marks = marks;
     }
     getBestStudents() {
-        console.log(this.filter(m => m === 4 || m === 5));
+        console.log(this.students.filter(st => st.marks.length > 3));
     }
 }
 
-const students = [
-    {firstName: Ivanov, secondName: Ivan, groupNumber: 1, marks: [3, 4, 2, 5, 5, 4, 3]},
-    {firstName: Petrov, secondName: Dima, groupNumber: 1, marks: [3, 4, 2, 5, 5, 4, 3]},
-    {firstName: Sidorov, secondName: Vasya, groupNumber: 1, marks: [3, 5, 5, 5, 5, 4, 3]},
-    {firstName: Fedorov, secondName: Andrei, groupNumber: 2, marks: [3, 2, 2, 2, 5, 4, 3]},
-    {firstName: Djokovic, secondName: Novak, groupNumber: 2, marks: [3, 3, 2, 3, 3, 4, 3]},
-    {firstName: Fedderer, secondName: Roger, groupNumber: 2, marks: [3, 4, 1, 5, 2, 5, 3]},
-    {firstName: Nadal, secondName: Rafael, groupNumber: 3, marks: [2, 4, 2, 2, 2, 4, 5]},
-    {firstName: Rublev, secondName: Andrei, groupNumber: 3, marks: [3, 3, 3, 3, 4, 4, 3]},
-    {firstName: Medvedev, secondName: Daniil, groupNumber: 3, marks: [4, 4, 4, 5, 5, 4, 4]},
-    {firstName: Khachanov, secondName: Karen, groupNumber: 3, marks: [5, 4, 5, 5, 5, 5, 5]},
-]
+// const students = [
+//     {firstName: 'Ivanov', secondName: 'Ivan', groupNumber: 1, marks: [3, 4, 2, 5, 5, 4, 3]},
+//     {firstName: 'Petrov', secondName: 'Dima', groupNumber: 1, marks: [3, 4, 2, 5, 5, 4, 3]},
+//     {firstName: 'Sidorov', secondName: 'Vasya', groupNumber: 1, marks: [3, 5, 5, 5, 5, 4, 3]},
+//     {firstName: 'Fedorov', secondName: 'Andrei', groupNumber: 2, marks: [3, 2, 2, 2, 5, 4, 3]},
+//     {firstName: 'Djokovic', secondName: 'Novak', groupNumber: 2, marks: [3, 3, 2, 3, 3, 4, 3]},
+//     {firstName: 'Fedderer', secondName: 'Roger', groupNumber: 2, marks: [3, 4, 1, 5, 2, 5, 3]},
+//     {firstName: 'Nadal', secondName: 'Rafael', groupNumber: 3, marks: [2, 4, 2, 2, 2, 4, 5]},
+//     {firstName: 'Rublev', secondName: 'Andrei', groupNumber: 3, marks: [3, 3, 3, 3, 4, 4, 3]},
+//     {firstName: 'Medvedev', secondName: 'Daniil', groupNumber: 3, marks: [4, 4, 4, 5, 5, 4, 4]},
+//     {firstName: 'Khachanov', secondName: 'Karen', groupNumber: 3, marks: [5, 4, 5, 5, 5, 5, 5]},
+// ]
 
 
-const betterStudents = new Student(students);
+const betterStudents = new Student();
 betterStudents.getBestStudents();
 
 // Task 02
@@ -65,5 +72,5 @@ betterStudents.getBestStudents();
 // Определить функции переназначения марки и грузоподъемности.
 
 // just a plug
-export default () => {
-};
+// export default () => {
+// };
