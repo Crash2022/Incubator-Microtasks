@@ -15,9 +15,16 @@ console.log('Lesson 6');
 class Student {
 
     students = [
-        {firstName: 'One', secondName: 'Two', groupNumber: 1, marks: [3, 4, 2, 5, 5, 4, 3]},
-        {firstName: 'Three', secondName: 'Four', groupNumber: 1, marks: [3, 4, 2]},
-        {firstName: 'Five', secondName: 'Five', groupNumber: 1, marks: [3, 4, 2, 5]}
+        {firstName: 'One', secondName: 'One', groupNumber: 1, marks: [3, 4, 2, 5, 5, 4, 3]},
+        {firstName: 'Two', secondName: 'Two', groupNumber: 1, marks: [2, 2, 3, 3, 2, 3, 3]},
+        {firstName: 'Three', secondName: 'Three', groupNumber: 1, marks: [3, 3, 2, 3, 3, 3, 3]},
+        {firstName: 'Four', secondName: 'Four', groupNumber: 1, marks: [3, 2, 2, 3, 2, 2, 3]},
+        {firstName: 'Five', secondName: 'Five', groupNumber: 1, marks: [5, 4, 5, 5, 5, 5, 4]},
+        {firstName: 'Six', secondName: 'Six', groupNumber: 1, marks: [5, 4, 3, 2, 5, 3, 4]},
+        {firstName: 'Seven', secondName: 'Seven', groupNumber: 1, marks: [5, 3, 5, 5, 3, 3, 4]},
+        {firstName: 'Eight', secondName: 'Eight', groupNumber: 1, marks: [4, 4, 5, 2, 4, 5, 4]},
+        {firstName: 'Nine', secondName: 'Nine', groupNumber: 1, marks: [2, 4, 3, 5, 3, 5, 3]},
+        {firstName: 'Ten', secondName: 'Ten', groupNumber: 1, marks: [5, 4, 3, 5, 2, 3, 2]},
     ]
 
     constructor(firstName, secondName, groupNumber, marks) {
@@ -26,27 +33,37 @@ class Student {
         // this.groupNumber = groupNumber;
         // this.marks = marks;
     }
+
+    // фильтр по оценкам 4 и 5
     getBestStudents() {
-        console.log(this.students.filter(st => st.marks.length > 3));
+        console.log(this.students.filter(st => st.marks.every(m => m === 4 || m === 5)));
+    }
+
+    // создает массив с суммой оценок
+    // getStudentsMarkSum() {
+    //     console.log( this.students.map(st => st.marks.reduce((acc, el) => acc + el)) );
+    // }
+    // создает новый массив и в него добавляет свойство "сумма" (если свойство назвать ак оригинал, то перезатрёт его)
+    getStudentsMarkSum() {
+        const MarkSumList = this.students.map(st => ({...st, marksSum: st.marks.reduce((acc, el) => acc + el) }) );
+        console.log(MarkSumList);
+    }
+
+    // создает массив со средним баллом
+    // getStudentsAverageMark() {
+    //     console.log( this.students.map(st => st.marks.reduce((acc, el) => acc + el) / st.marks.length) );
+    // }
+    // создает новый массив и в него добавляет свойство "средний балл"
+    getStudentsAverageMark() {
+        const averageMarkList = this.students.map(st => ({...st, markAverage: (st.marks.reduce((acc, el) => acc + el) / st.marks.length).toFixed(2) }) )
+        console.log(averageMarkList);
     }
 }
 
-// const students = [
-//     {firstName: 'Ivanov', secondName: 'Ivan', groupNumber: 1, marks: [3, 4, 2, 5, 5, 4, 3]},
-//     {firstName: 'Petrov', secondName: 'Dima', groupNumber: 1, marks: [3, 4, 2, 5, 5, 4, 3]},
-//     {firstName: 'Sidorov', secondName: 'Vasya', groupNumber: 1, marks: [3, 5, 5, 5, 5, 4, 3]},
-//     {firstName: 'Fedorov', secondName: 'Andrei', groupNumber: 2, marks: [3, 2, 2, 2, 5, 4, 3]},
-//     {firstName: 'Djokovic', secondName: 'Novak', groupNumber: 2, marks: [3, 3, 2, 3, 3, 4, 3]},
-//     {firstName: 'Fedderer', secondName: 'Roger', groupNumber: 2, marks: [3, 4, 1, 5, 2, 5, 3]},
-//     {firstName: 'Nadal', secondName: 'Rafael', groupNumber: 3, marks: [2, 4, 2, 2, 2, 4, 5]},
-//     {firstName: 'Rublev', secondName: 'Andrei', groupNumber: 3, marks: [3, 3, 3, 3, 4, 4, 3]},
-//     {firstName: 'Medvedev', secondName: 'Daniil', groupNumber: 3, marks: [4, 4, 4, 5, 5, 4, 4]},
-//     {firstName: 'Khachanov', secondName: 'Karen', groupNumber: 3, marks: [5, 4, 5, 5, 5, 5, 5]},
-// ]
-
-
 const betterStudents = new Student();
 betterStudents.getBestStudents();
+betterStudents.getStudentsMarkSum();
+betterStudents.getStudentsAverageMark();
 
 // Task 02
 // Создать класс с двумя переменными. Добавить конструктор с входными параметрами и инициализирующий члены класса по умолчанию.
