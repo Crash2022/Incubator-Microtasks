@@ -136,6 +136,28 @@ clientsList.getClientsSortedByCreditCardNumber();
 // Создать производный класс – грузовик, имеющий грузоподъемность кузова.
 // Определить функции переназначения марки и грузоподъемности.
 
-// just a plug
-// export default () => {
-// };
+class Car {
+    constructor(model, numberOfCilinders, power) {
+        this.model = model;
+        this.numberOfCilinders = numberOfCilinders;
+        this.power = power;
+    }
+
+    showCarProperties() {
+        console.log(this);
+    }
+}
+
+console.log('---Task 05---');
+const porsche = new Car('911', 6, 487);
+porsche.showCarProperties();
+
+class Truck extends Car {
+    constructor(model, numberOfCilinders, power, loadCapacity) {
+        super(model, numberOfCilinders, power);
+        this.loadCapacity = loadCapacity;
+    }
+}
+
+const truck = new Truck('MAN', 4, 430, 1000);
+truck.showCarProperties();
