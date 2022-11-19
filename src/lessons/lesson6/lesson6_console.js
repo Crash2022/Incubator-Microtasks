@@ -63,6 +63,7 @@ class Student {
     }
 }
 
+console.log('---Task 01---');
 const betterStudents = new Student();
 betterStudents.getBestStudents();
 // betterStudents.getStudentsMarkSum();
@@ -72,6 +73,18 @@ betterStudents.getStudentsAverageMark();
 // Создать класс с двумя переменными. Добавить конструктор с входными параметрами и инициализирующий члены класса по умолчанию.
 // Можно ли создать метод на экземпляре класса который будет удалять сам экземпляр класса?
 // Можно ли создать метод класса который будет удалять экземпляр класса?
+
+class TaskTwo {
+    name = 'task two';
+    age = 2;
+
+    constructor(name, age) {
+    }
+}
+
+console.log('---Task 02---');
+const newTaskTwo = new TaskTwo();
+console.log(newTaskTwo);
 
 // Task 03
 // Составить описание класса для представления времени. Предусмотреть возможности установки времени и изменения его отдельных
@@ -85,6 +98,38 @@ betterStudents.getStudentsAverageMark();
 // Методы: установка значений атрибутов, получение значений атрибутов, вывод информации.
 // Создать массив объектов данного класса.
 // Вывести список покупателей в алфавитном порядке и список покупателей, у которых номер кредитной карточки находится в заданном диапазоне.
+
+class Buyer {
+
+    clients = [
+        {firstName: 'Novak', secondName: 'Djokovic', address: 'Moscow', creditCardNumber: '2131231414145145'},
+        {firstName: 'Daniil', secondName: 'Medvedev', address: 'Saint-Petersburg', creditCardNumber: '0956948543783486'},
+        {firstName: 'Andrei', secondName: 'Rublev', address: 'Ekaterinburg', creditCardNumber: '0576843109658416'},
+        {firstName: 'Rafael', secondName: 'Nadal', address: 'Samara', creditCardNumber: '1179834765109643'},
+        {firstName: 'Roger', secondName: 'Fedderer', address: 'Minsk', creditCardNumber: '3069584716558403'}
+    ]
+
+    constructor(firstName, secondName, address, creditCardNumber) {
+        // this.firstName = firstName;
+        // this.secondName = secondName;
+        // this.address = address;
+        // this.creditCardNumber = creditCardNumber;
+    }
+
+    getClientsSortedByFirstName() {
+        const sortedListByFirstName = this.clients.sort((a,b) => a.firstName.localeCompare(b.firstName));
+        console.log(sortedListByFirstName);
+    }
+    getClientsSortedByCreditCardNumber() {
+        const sortedListByFirstName = this.clients.sort((a,b) => a.creditCardNumber.localeCompare(b.creditCardNumber));
+        console.log(sortedListByFirstName);
+    }
+}
+
+console.log('---Task 04---');
+const clientsList = new Buyer();
+clientsList.getClientsSortedByFirstName();
+clientsList.getClientsSortedByCreditCardNumber();
 
 // Task 05
 // Создать класс машина - имеющий марку, число цилиндров, мощность. Определить конструктор и функцию печати.
