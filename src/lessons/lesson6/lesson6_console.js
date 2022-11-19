@@ -137,9 +137,12 @@ clientsList.getClientsSortedByCreditCardNumber();
 // Определить функции переназначения марки и грузоподъемности.
 
 class Car {
-    constructor(model, numberOfCilinders, power) {
+
+    numberOfCilinders = 4;
+
+    constructor(model, /*numberOfCilinders,*/ power) {
         this.model = model;
-        this.numberOfCilinders = numberOfCilinders;
+        // this.numberOfCilinders = numberOfCilinders;
         this.power = power;
     }
 
@@ -149,15 +152,15 @@ class Car {
 }
 
 console.log('---Task 05---');
-const porsche = new Car('911', 6, 487);
+const porsche = new Car('911', 487);
 porsche.showCarProperties();
 
 class Truck extends Car {
-    constructor(model, numberOfCilinders, power, loadCapacity) {
-        super(model, numberOfCilinders, power);
+    constructor(model, /*numberOfCilinders,*/ power, loadCapacity) {
+        super(model, /*numberOfCilinders,*/ power);
         this.loadCapacity = loadCapacity;
     }
 }
 
-const truck = new Truck('MAN', 4, 430, 1000);
+const truck = new Truck('MAN', 430, 1000);
 truck.showCarProperties();
