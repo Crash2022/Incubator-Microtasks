@@ -56,13 +56,16 @@ class Student {
     // создает новый массив и в него добавляет свойство "средний балл"
     getStudentsAverageMark() {
         const averageMarkList = this.students.map(st => ({...st, markAverage: (st.marks.reduce((acc, el) => acc + el) / st.marks.length).toFixed(2) }) )
-        console.log(averageMarkList);
+        //console.log(averageMarkList);
+
+        const sortedListWithAverageMark = averageMarkList.sort((a,b) => b.markAverage.localeCompare(a.markAverage))
+        console.log(sortedListWithAverageMark);
     }
 }
 
 const betterStudents = new Student();
 betterStudents.getBestStudents();
-betterStudents.getStudentsMarkSum();
+// betterStudents.getStudentsMarkSum();
 betterStudents.getStudentsAverageMark();
 
 // Task 02
